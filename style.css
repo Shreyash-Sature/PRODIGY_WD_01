@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Hover underline */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #00f5ff;
+    transition: 0.4s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #00f5ff;
+}
+
+/* Sections */
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    color: white;
+    transition: 1s ease;
+}
+
+/* Different gradients for each section */
+.hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.about {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.work {
+    background: linear-gradient(135deg, #fc466b, #3f5efb);
+}
+
+.contact {
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+}
